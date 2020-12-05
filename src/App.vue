@@ -18,7 +18,7 @@
             position="end"
           >
           </v-img>
-            <!-- <div class="blue--text" align end>
+          <!-- <div class="blue--text" align end>
               Presents
             </div> -->
 
@@ -56,9 +56,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue" text @click="dialog = false">
-                  close
-                </v-btn>
+                <v-btn color="blue" text @click="dialog = false"> close </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -94,9 +92,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue" text @click="dialog = false">
-                  Close
-                </v-btn>
+                <v-btn color="blue" text @click="dialog = false"> Close </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -132,18 +128,107 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue" text @click="dialog = false">
-                  Close
-                </v-btn>
+                <v-btn color="blue" text @click="dialog = false"> Close </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
         </v-app-bar>
       </v-img>
+      <v-footer padless dark absolute class="pb-0">
+        <v-container class="pt-0 pb-0">
+          <v-row no-gutters>
+            <v-col lg offset-lg cols="4" class="pt-5 ml-0 pl-0" justify center>
+              <v-card-title class="grey darken-4 amber--text">
+                <strong class="subheading">
+                  <p>
+                    Countdown to the biggest event <br />of the year &lt;c o d e
+                    s t o r m/&gt;!
+                  </p>
+                </strong>
+              </v-card-title>
+              <v-spacer></v-spacer>
+            </v-col>
+            <v-col class="pt-2 mt-0 ml-1 pl-1" cols="auto">
+              <flip-countdown deadline="2021-01-10 00:00:00"></flip-countdown>
+            </v-col>
+            <v-col cols="2" lg class="pt-8">
+              <v-dialog v-model="dialog" max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn color="blue" large block elevation v-bind="attrs" v-on="on">
+                    <h3>click here to book a seat</h3>
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <span class="headline">Fill in your details</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container>
+                      <v-row>
+                        <v-col cols="12" sm="6" md="6">
+                          <v-text-field
+                            label="First Name*"
+                            required
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                          <v-text-field
+                            label="Last Name*"
+                            persistent-hint
+                            required
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12">
+                          <v-text-field label="Email*" required></v-text-field>
+                        </v-col>
+                        <v-col cols="6" md="4">
+                          <v-text-field
+                            label="Phone Number*"
+                            type="integer"
+                            required
+                          ></v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                          <v-select
+                            :items="['16-25', '26-35', '35-54', '54+']"
+                            label="Age*"
+                            required
+                          ></v-select>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                          <v-autocomplete
+                            :items="[
+                              'Developer',
+                              'Software Engineer',
+                              'Potential Investor',
+                              'Scout',
+                              'Project Manager',
+                              'Other',
+                            ]"
+                            label="Who are you?"
+                            multiple
+                          ></v-autocomplete>
+                        </v-col>
+                      </v-row>
+                    </v-container>
+                    <small>*indicates required field</small>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" text @click="dialog = false">
+                      Cancel
+                    </v-btn>
+                    <v-btn color="blue darken-1" text @click="dialog = false">
+                      Register
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-footer>
     </v-main>
-    <v-footer>
-          <flip-countdown deadline="2021-01-10 00:00:00"></flip-countdown>
-    </v-footer>
   </v-app>
 </template>
 
