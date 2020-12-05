@@ -1,6 +1,6 @@
 <template>
   <v-app class="ma-0 pa-0 pb-0 mb-0">
-    <v-main>
+    <v-main class="ma-0 pa-0">
       <v-img
         src="@/assets/background.png"
         alt="Background Image"
@@ -18,7 +18,7 @@
             position="end"
           >
           </v-img>
-          <!-- <div class="blue--text" align end>
+          <!-- <div class="blue--text" position="end">
               Presents
             </div> -->
 
@@ -133,16 +133,35 @@
             </v-card>
           </v-dialog>
         </v-app-bar>
+        <v-container fluid fill height>
+          <v-row no-gutters>
+            <v-col cols="12" align="center" class="pt-0 ma-0 pb-5">
+              <span>Paveway Technologies Inc Presents</span>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col align="center" class="pt-3">
+              <span class="heading display-3">&lt;C o d e S t o r m/&gt;</span> <br/>
+              <span class="subheading">Next Generation Techies</span>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-card >
+
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-img>
       <v-footer padless dark absolute class="pb-0">
         <v-container class="pt-0 pb-0">
           <v-row no-gutters>
-            <v-col lg offset-lg cols="4" class="pt-5 ml-0 pl-0" justify center>
-              <v-card-title class="grey darken-4 amber--text">
+            <v-col lg offset-lg cols="4" class="pt-5 ml-0 pl-9" align="center">
+              <v-card-title class="grey darken-4 amber--text text-center justify-center">
                 <strong class="subheading">
                   <p>
-                    Countdown to the biggest event <br />of the year &lt;c o d e
-                    s t o r m/&gt;!
+                    CMTV Hall <br />Behind Eta Palace
                   </p>
                 </strong>
               </v-card-title>
