@@ -1,6 +1,6 @@
 <template>
-  <v-app class="ma-0 pa-0 pb-0 mb-0">
-    <v-main class="ma-0 pa-0">
+  <v-app class="ma-0 pt-0 pb-0 mb-0">
+    <v-main class="ma-0 pt-0">
       <v-img
         src="@/assets/background.png"
         alt="Background Image"
@@ -18,10 +18,10 @@
             position="end"
           >
           </v-img>
-          <!-- <div class="blue--text" position="end">
-              Presents
-            </div> -->
-
+          <v-spacer></v-spacer>
+          <span class="blue--text font-weight-bold"
+            >Paveway Technologies Inc Presents</span
+          >
           <v-spacer></v-spacer>
 
           <v-dialog v-model="dialog" width="500">
@@ -132,23 +132,111 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
+          <v-dialog v-model="dialog" width="500">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                class="blue--text darken"
+                href="#"
+                text
+                v-bind="attrs"
+                v-on="on"
+              >
+                <span class="mr-1 darken">Objective</span>
+                <v-icon></v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title class="headline blue lighten-2">
+                Our Objective
+              </v-card-title>
+
+              <v-card-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </v-card-text>
+
+              <v-divider></v-divider>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="blue" text @click="dialog = false"> Close </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
         </v-app-bar>
         <v-container fluid fill height>
-          <v-row no-gutters>
+          <!-- <v-row no-gutters>
             <v-col cols="12" align="center" class="pt-0 ma-0 pb-5">
-              <span>Paveway Technologies Inc Presents</span>
+              <span class="blue--text">Paveway Technologies Inc Presents</span>
+            </v-col>
+          </v-row> -->
+          <v-row no-gutters class="fill-height" justify="top">
+            <v-col align="center" class="pt-0">
+              <span class="heading display-4 font-weight-bold amber--text glow"
+                >&lt;C o d e S t o r m/&gt;</span
+              >
+              <br />
+              <span class="subheading basil--text font-weight-heavy display-1"
+                >"The Next Generation Techies"</span
+              >
             </v-col>
           </v-row>
-          <v-row no-gutters>
-            <v-col align="center" class="pt-3">
-              <span class="heading display-3">&lt;C o d e S t o r m/&gt;</span> <br/>
-              <span class="subheading">Next Generation Techies</span>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-card >
+          <v-row no-gutters class="fill-height" >
+            <v-col align-end justify-end class="pt-30 mt=30">
+              <v-card class="events">
+                <v-row class="justify-center">
+                  <v-icon class="b-icon" color="white">mdi-arrow-down</v-icon>
+                </v-row>
+                <v-card-title class="justify-center">
+                  <h2 class="font-weight-bold display-2">EVENTS</h2>
+                </v-card-title>
 
+                <v-tabs v-model="tab" background-color="transparent" grow dark>
+                  <v-tab v-for="item in items" :key="item">
+                    {{ item }}
+                  </v-tab>
+                  <v-tabs-items v-model="tab">
+                    <v-tab-item v-for="item in items" :key="item">
+                      <v-sheet class="mx-auto" elevation="8" dark>
+                        <v-slide-group v-model="model" class="pa-4" show-arrows>
+                          <v-slide-item
+                            v-for="n in 10"
+                            :key="n"
+                            v-slot="{ active, toggle }"
+                          >
+                            <v-card
+                              :color="active ? 'primary' : 'grey lighten-1'"
+                              class="ma-4"
+                              height="250"
+                              width="250"
+                              @click="toggle"
+                            >
+                              <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                              >
+                                <v-scale-transition>
+                                  <v-icon
+                                    v-if="active"
+                                    color="white"
+                                    size="48"
+                                    v-text="'mdi-close-circle-outline'"
+                                  ></v-icon>
+                                </v-scale-transition>
+                              </v-row>
+                            </v-card>
+                          </v-slide-item>
+                        </v-slide-group>
+                      </v-sheet>
+                    </v-tab-item>
+                  </v-tabs-items>
+                </v-tabs>
               </v-card>
             </v-col>
           </v-row>
@@ -158,11 +246,11 @@
         <v-container class="pt-0 pb-0">
           <v-row no-gutters>
             <v-col lg offset-lg cols="4" class="pt-5 ml-0 pl-9" align="center">
-              <v-card-title class="grey darken-4 amber--text text-center justify-center">
+              <v-card-title
+                class="grey darken-4 amber--text text-center justify-center"
+              >
                 <strong class="subheading">
-                  <p>
-                    CMTV Hall <br />Behind Eta Palace
-                  </p>
+                  <p>CMTV Hall <br />Behind Eta Palace</p>
                 </strong>
               </v-card-title>
               <v-spacer></v-spacer>
@@ -173,7 +261,14 @@
             <v-col cols="2" lg class="pt-8">
               <v-dialog v-model="dialog" max-width="600px">
                 <template v-slot:activator="{ on, attrs }">
-                  <v-btn color="blue" large block elevation v-bind="attrs" v-on="on">
+                  <v-btn
+                    color="blue"
+                    large
+                    block
+                    elevation
+                    v-bind="attrs"
+                    v-on="on"
+                  >
                     <h3>click here to book a seat</h3>
                   </v-btn>
                 </template>
@@ -188,6 +283,7 @@
                           <v-text-field
                             label="First Name*"
                             required
+                            outlined
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
@@ -195,6 +291,7 @@
                             label="Last Name*"
                             persistent-hint
                             required
+                            outlined
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12">
@@ -204,7 +301,9 @@
                           <v-text-field
                             label="Phone Number*"
                             type="integer"
+                            placeholder="e.g myname@example.com"
                             required
+                            outlined
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
@@ -212,6 +311,7 @@
                             :items="['16-25', '26-35', '35-54', '54+']"
                             label="Age*"
                             required
+                            outlined
                           ></v-select>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
@@ -226,6 +326,7 @@
                             ]"
                             label="Who are you?"
                             multiple
+                            outlined
                           ></v-autocomplete>
                         </v-col>
                       </v-row>
@@ -253,8 +354,61 @@
 
 <script>
 import FlipCountdown from "vue2-flip-countdown";
+import Events from "./components/Events";
 
 export default {
   components: { FlipCountdown },
+  Events,
+  data() {
+    return {
+      tab: null,
+      items: ["PAST EVENTS", "FUTURE EVENTS"],
+      text:
+        " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    };
+  },
+  // data() {
+  //   return {
+  //     tab: null,
+  //     items: ["Appetizers", "Entrees", "Deserts", "Cocktails"],
+  //     text:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  //   };
+  // },
 };
 </script>
+
+<style lang="scss" scoped>
+.glow {
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 5px #eeeeee, 0 0 10px #000000, 0 0 15px #000000,
+      0 0 40px #000000, 0 0 25px #9554b3, 0 0 30px #9554b3, 0 0 45px #9554b3;
+  }
+  to {
+    text-shadow: 0 0 10px #eeeeee, 0 0 15px #4d94ff, 0 0 40px #4d94ff,
+      0 0 50px #4d94ff, 0 0 30px #4d94ff, 0 0 45px #4d94ff, 0 0 80px #4d94ff;
+  }
+}
+
+.events {
+  background-color: transparent !important;
+  position: relative;
+  bottom: 0px;
+  &:hover {
+    background-color: black !important;
+    position: absolute;
+    width: 100vw;
+    .b-icon {
+      display: none;
+    }
+  }
+}
+</style>
