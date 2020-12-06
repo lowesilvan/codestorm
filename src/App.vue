@@ -170,11 +170,6 @@
           </v-dialog>
         </v-app-bar>
         <v-container fluid fill height>
-          <!-- <v-row no-gutters>
-            <v-col cols="12" align="center" class="pt-0 ma-0 pb-5">
-              <span class="blue--text">Paveway Technologies Inc Presents</span>
-            </v-col>
-          </v-row> -->
           <v-row no-gutters class="fill-height" justify="top">
             <v-col align="center" class="pt-0">
               <span class="heading display-4 font-weight-bold amber--text glow"
@@ -186,59 +181,75 @@
               >
             </v-col>
           </v-row>
-          <v-row no-gutters class="fill-height" >
-            <v-col align-end justify-end class="pt-30 mt=30">
-              <v-card class="events">
-                <v-row class="justify-center">
-                  <v-icon class="b-icon" color="white">mdi-arrow-down</v-icon>
-                </v-row>
-                <v-card-title class="justify-center">
-                  <h2 class="font-weight-bold display-2">EVENTS</h2>
-                </v-card-title>
+          <v-row
+            align-self="baseline"
+            justify="baseline"
+            no-gutters
+            class="pb-0"
+          >
+            <v-col cols="4" d-flex class="pb-0">
+              <v-card
+                class="mx-auto pt-0 pb-0 pa-0 ma-0 mb-0"
+                max-width="344"
+                flat
+                hover
+                max-height="auto"
+              >
+                <v-img src="@/assets/avatar.png" height="150px"></v-img>
 
-                <v-tabs v-model="tab" background-color="transparent" grow dark>
-                  <v-tab v-for="item in items" :key="item">
-                    {{ item }}
-                  </v-tab>
-                  <v-tabs-items v-model="tab">
-                    <v-tab-item v-for="item in items" :key="item">
-                      <v-sheet class="mx-auto" elevation="8" dark>
-                        <v-slide-group v-model="model" class="pa-4" show-arrows>
-                          <v-slide-item
-                            v-for="n in 10"
-                            :key="n"
-                            v-slot="{ active, toggle }"
-                          >
-                            <v-card
-                              :color="active ? 'primary' : 'grey lighten-1'"
-                              class="ma-4"
-                              height="250"
-                              width="250"
-                              @click="toggle"
-                            >
-                              <v-row
-                                class="fill-height"
-                                align="center"
-                                justify="center"
-                              >
-                                <v-scale-transition>
-                                  <v-icon
-                                    v-if="active"
-                                    color="white"
-                                    size="48"
-                                    v-text="'mdi-close-circle-outline'"
-                                  ></v-icon>
-                                </v-scale-transition>
-                              </v-row>
-                            </v-card>
-                          </v-slide-item>
-                        </v-slide-group>
-                      </v-sheet>
-                    </v-tab-item>
-                  </v-tabs-items>
-                </v-tabs>
+                <v-card-title>&lt;Host/&gt; Mbirriambang Alain </v-card-title>
+
+                <v-card-subtitle>
+                  CTO, PavewayTechnologies Inc
+                </v-card-subtitle>
+
+                <v-card-actions>
+                  <v-btn text color="teal accent-4" @click="reveal = true">
+                    Learn More
+                  </v-btn>
+                </v-card-actions>
+
+                <v-expand-transition>
+                  <v-card
+                    v-if="reveal"
+                    class="transition-fast-in-fast-out v-card--reveal"
+                    style="height: 100%"
+                  >
+                    <v-card-text class="pb-0">
+                      <p class="display-1 text--primary">Origin</p>
+                      <p>
+                        late 16th century (as a noun denoting a place where alms
+                        were distributed): from medieval Latin eleemosynarius,
+                        from late Latin eleemosyna ‘alms’, from Greek eleēmosunē
+                        ‘compassion’
+                      </p>
+                    </v-card-text>
+                    <v-card-actions class="pt-0">
+                      <v-btn text color="teal accent-4" @click="reveal = false">
+                        Close
+                      </v-btn>
+                    </v-card-actions>
+
+                    <v-expand-transition>
+                      <div v-show="show">
+                        <v-divider></v-divider>
+
+                        <v-card-text>
+                          I'm a thing. But, like most politicians, he promised
+                          more than he could deliver. You won't have time for
+                          sleeping, soldier, not with all the bed making you'll
+                          be doing. Then we'll go with that data file! Hey, you
+                          add a one and two zeros to that or we walk! You're
+                          going to do his laundry? I've got to find a way to
+                          escape.
+                        </v-card-text>
+                      </div>
+                    </v-expand-transition>
+                  </v-card>
+                </v-expand-transition>
               </v-card>
             </v-col>
+            <v-spacer></v-spacer>
           </v-row>
         </v-container>
       </v-img>
@@ -295,13 +306,16 @@
                           ></v-text-field>
                         </v-col>
                         <v-col cols="12">
-                          <v-text-field label="Email*" required></v-text-field>
+                          <v-text-field
+                            label="Email*"
+                            required
+                            placeholder="e.g myname@example.com"
+                          ></v-text-field>
                         </v-col>
                         <v-col cols="6" md="4">
                           <v-text-field
                             label="Phone Number*"
                             type="integer"
-                            placeholder="e.g myname@example.com"
                             required
                             outlined
                           ></v-text-field>
@@ -367,14 +381,9 @@ export default {
         " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
-  // data() {
-  //   return {
-  //     tab: null,
-  //     items: ["Appetizers", "Entrees", "Deserts", "Cocktails"],
-  //     text:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   };
-  // },
+  data: () => ({
+    reveal: false,
+  }),
 };
 </script>
 
@@ -387,11 +396,13 @@ export default {
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
+
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 5px #eeeeee, 0 0 10px #000000, 0 0 15px #000000,
       0 0 40px #000000, 0 0 25px #9554b3, 0 0 30px #9554b3, 0 0 45px #9554b3;
   }
+
   to {
     text-shadow: 0 0 10px #eeeeee, 0 0 15px #4d94ff, 0 0 40px #4d94ff,
       0 0 50px #4d94ff, 0 0 30px #4d94ff, 0 0 45px #4d94ff, 0 0 80px #4d94ff;
@@ -402,13 +413,22 @@ export default {
   background-color: transparent !important;
   position: relative;
   bottom: 0px;
+
   &:hover {
     background-color: black !important;
     position: absolute;
     width: 100vw;
+
     .b-icon {
       display: none;
     }
   }
+}
+
+.v-card--reveal {
+  bottom: 0;
+  opacity: 1 !important;
+  position: absolute;
+  width: 100%;
 }
 </style>
