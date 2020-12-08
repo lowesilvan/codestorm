@@ -169,199 +169,273 @@
             </v-card>
           </v-dialog>
         </v-app-bar>
-        <v-container fluid fill height>
-          <v-row no-gutters class="fill-height" justify="top">
-            <v-col align="center" class="pt-0">
+        <v-container class="ma-0 pa-0">
+          <v-row class="justify-center">
+            <h5 style="text-align: right !important;">
               <span class="heading display-4 font-weight-bold amber--text glow"
                 >&lt;C o d e S t o r m/&gt;</span
               >
-              <br />
-              <span class="subheading basil--text font-weight-heavy display-1"
+              <!-- <br /> -->
+              <!-- <span class="subheading basil--text font-weight-heavy display-1"
                 >"The Next Generation Techies"</span
-              >
-            </v-col>
+              > -->
+            </h5>
           </v-row>
-          <v-row
-            align-self="baseline"
-            justify="baseline"
-            no-gutters
-            class="pb-0"
-          >
-            <v-col cols="4" d-flex class="pb-0">
-              <v-card
-                class="mx-auto pt-0 pb-0 pa-0 ma-0 mb-0"
-                max-width="344"
-                flat
-                hover
-                max-height="auto"
-              >
-                <v-img src="@/assets/avatar.png" height="150px"></v-img>
+          <div>
+            <v-row
+              align-self="baseline"
+              justify="baseline"
+              no-gutters
+              class="pb-0"
+            >
+              <v-col cols="3" class="pb-0">
+                <v-card class="" flat hover>
+                  <v-img src="@/assets/avatar.png" height="150px"></v-img>
 
-                <v-card-title>&lt;Host/&gt; Mbirriambang Alain </v-card-title>
+                  <v-card-title>&lt;Host/&gt; Mbirriambang Alain </v-card-title>
 
-                <v-card-subtitle>
-                  CTO, PavewayTechnologies Inc
-                </v-card-subtitle>
+                  <v-card-subtitle>
+                    CTO, PavewayTechnologies Inc
+                  </v-card-subtitle>
 
-                <v-card-actions>
-                  <v-btn text color="teal accent-4" @click="reveal = true">
-                    Learn More
-                  </v-btn>
-                </v-card-actions>
-
-                <v-expand-transition>
-                  <v-card
-                    v-if="reveal"
-                    class="transition-fast-in-fast-out v-card--reveal"
-                    style="height: 100%"
-                  >
-                    <v-card-text class="pb-0">
-                      <p class="display-1 text--primary">Origin</p>
-                      <p>
-                        late 16th century (as a noun denoting a place where alms
-                        were distributed): from medieval Latin eleemosynarius,
-                        from late Latin eleemosyna ‘alms’, from Greek eleēmosunē
-                        ‘compassion’
-                      </p>
-                    </v-card-text>
-                    <v-card-actions class="pt-0">
-                      <v-btn text color="teal accent-4" @click="reveal = false">
-                        Close
-                      </v-btn>
-                    </v-card-actions>
-
-                    <v-expand-transition>
-                      <div v-show="show">
-                        <v-divider></v-divider>
-
-                        <v-card-text>
-                          I'm a thing. But, like most politicians, he promised
-                          more than he could deliver. You won't have time for
-                          sleeping, soldier, not with all the bed making you'll
-                          be doing. Then we'll go with that data file! Hey, you
-                          add a one and two zeros to that or we walk! You're
-                          going to do his laundry? I've got to find a way to
-                          escape.
-                        </v-card-text>
-                      </div>
-                    </v-expand-transition>
-                  </v-card>
-                </v-expand-transition>
-              </v-card>
-            </v-col>
-            <v-spacer></v-spacer>
-          </v-row>
-        </v-container>
-      </v-img>
-      <v-footer padless dark absolute class="pb-0">
-        <v-container class="pt-0 pb-0">
-          <v-row no-gutters>
-            <v-col lg offset-lg cols="4" class="pt-5 ml-0 pl-9" align="center">
-              <v-card-title
-                class="grey darken-4 amber--text text-center justify-center"
-              >
-                <strong class="subheading">
-                  <p>CMTV Hall <br />Behind Eta Palace</p>
-                </strong>
-              </v-card-title>
-              <v-spacer></v-spacer>
-            </v-col>
-            <v-col class="pt-2 mt-0 ml-1 pl-1" cols="auto">
-              <flip-countdown deadline="2021-01-10 00:00:00"></flip-countdown>
-            </v-col>
-            <v-col cols="2" lg class="pt-8">
-              <v-dialog v-model="dialog" max-width="600px">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    color="blue"
-                    large
-                    block
-                    elevation
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    <h3>click here to book a seat</h3>
-                  </v-btn>
-                </template>
-                <v-card>
-                  <v-card-title>
-                    <span class="headline">Fill in your details</span>
-                  </v-card-title>
-                  <v-card-text>
-                    <v-container>
-                      <v-row>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-text-field
-                            label="First Name*"
-                            required
-                            outlined
-                          ></v-text-field>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-text-field
-                            label="Last Name*"
-                            persistent-hint
-                            required
-                            outlined
-                          ></v-text-field>
-                        </v-col>
-                        <v-col cols="12">
-                          <v-text-field
-                            label="Email*"
-                            required
-                            placeholder="e.g myname@example.com"
-                          ></v-text-field>
-                        </v-col>
-                        <v-col cols="6" md="4">
-                          <v-text-field
-                            label="Phone Number*"
-                            type="integer"
-                            required
-                            outlined
-                          ></v-text-field>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="4">
-                          <v-select
-                            :items="['16-25', '26-35', '35-54', '54+']"
-                            label="Age*"
-                            required
-                            outlined
-                          ></v-select>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-autocomplete
-                            :items="[
-                              'Developer',
-                              'Software Engineer',
-                              'Potential Investor',
-                              'Scout',
-                              'Project Manager',
-                              'Other',
-                            ]"
-                            label="Who are you?"
-                            multiple
-                            outlined
-                          ></v-autocomplete>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                    <small>*indicates required field</small>
-                  </v-card-text>
                   <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="blue darken-1" text @click="dialog = false">
-                      Cancel
-                    </v-btn>
-                    <v-btn color="blue darken-1" text @click="dialog = false">
-                      Register
+                    <v-btn text color="teal accent-4" @click="reveal1 = true">
+                      Learn More
                     </v-btn>
                   </v-card-actions>
+
+                  <v-expand-transition>
+                    <v-card
+                      v-if="reveal1"
+                      class="transition-fast-in-fast-out v-card--reveal"
+                      style="height: 100%"
+                    >
+                      <v-card-text class="pb-0">
+                        <p class="display-1 text--primary">Origin</p>
+                        <p>
+                          late 16th century (as a noun denoting a place where
+                          alms were distributed): from medieval Latin
+                          eleemosynarius, from late Latin eleemosyna ‘alms’,
+                          from Greek eleēmosunē ‘compassion’
+                        </p>
+                      </v-card-text>
+                      <v-card-actions class="pt-0">
+                        <v-btn
+                          text
+                          color="teal accent-4"
+                          @click="reveal1 = false"
+                        >
+                          Close
+                        </v-btn>
+                      </v-card-actions>
+
+                      <v-expand-transition>
+                        <div v-show="show">
+                          <v-divider></v-divider>
+
+                          <v-card-text>
+                            I'm a thing. But, like most politicians, he promised
+                            more than he could deliver. You won't have time for
+                            sleeping, soldier, not with all the bed making
+                            you'll be doing. Then we'll go with that data file!
+                            Hey, you add a one and two zeros to that or we walk!
+                            You're going to do his laundry? I've got to find a
+                            way to escape.
+                          </v-card-text>
+                        </div>
+                      </v-expand-transition>
+                    </v-card>
+                  </v-expand-transition>
                 </v-card>
-              </v-dialog>
-            </v-col>
-          </v-row>
+              </v-col>
+              <v-col cols="3">
+                <v-card flat hover>
+                  <v-img src="@/assets/avatar.png" height="150px"></v-img>
+
+                  <v-card-title>&lt;Host/&gt; Etchu Ferdinand </v-card-title>
+
+                  <v-card-subtitle>
+                    Frontend, PavewayTechnologies Inc
+                  </v-card-subtitle>
+
+                  <v-card-actions>
+                    <v-btn text color="teal accent-4" @click="reveal = true">
+                      Learn More
+                    </v-btn>
+                  </v-card-actions>
+
+                  <v-expand-transition>
+                    <v-card
+                      v-if="reveal"
+                      class="transition-fast-in-fast-out v-card--reveal"
+                      style="height: 100%"
+                    >
+                      <v-card-text class="pb-0">
+                        <p class="display-1 text--primary">Origin</p>
+                        <p>
+                          late 16th century (as a noun denoting a place where
+                          alms were distributed): from medieval Latin
+                          eleemosynarius, from late Latin eleemosyna ‘alms’,
+                          from Greek eleēmosunē ‘compassion’
+                        </p>
+                      </v-card-text>
+                      <v-card-actions class="pt-0">
+                        <v-btn
+                          text
+                          color="teal accent-4"
+                          @click="reveal = false"
+                        >
+                          Close
+                        </v-btn>
+                      </v-card-actions>
+
+                      <v-expand-transition>
+                        <div v-show="show">
+                          <v-divider></v-divider>
+
+                          <v-card-text>
+                            I'm a thing. But, like most politicians, he promised
+                            more than he could deliver. You won't have time for
+                            sleeping, soldier, not with all the bed making
+                            you'll be doing. Then we'll go with that data file!
+                            Hey, you add a one and two zeros to that or we walk!
+                            You're going to do his laundry? I've got to find a
+                            way to escape.
+                          </v-card-text>
+                        </div>
+                      </v-expand-transition>
+                    </v-card>
+                  </v-expand-transition>
+                </v-card>
+              </v-col>
+              <v-spacer></v-spacer>
+            </v-row>
+          </div>
         </v-container>
-      </v-footer>
+         <v-footer padless dark class="event-host">
+              <v-row no-gutters>
+                <v-col
+                  lg
+                  offset-lg
+                  cols="4"
+                  class="pt-5 ml-0 pl-9"
+                  align="center"
+                >
+                  <v-card-title
+                    class="grey darken-4 amber--text text-center justify-center"
+                  >
+                    <strong class="subheading">
+                      <p>CMTV Hall <br />Behind Eta Palace</p>
+                    </strong>
+                  </v-card-title>
+                  <v-spacer></v-spacer>
+                </v-col>
+                <v-col class="pt-2 mt-0 ml-1 pl-1" cols="auto">
+                  <flip-countdown
+                    deadline="2021-01-10 00:00:00"
+                  ></flip-countdown>
+                </v-col>
+                <v-col cols="2" lg class="pt-8">
+                  <v-dialog v-model="dialog" max-width="600px">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        color="blue"
+                        large
+                        block
+                        elevation
+                        v-bind="attrs"
+                        v-on="on"
+                      >
+                        <h3>click here to book a seat</h3>
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Fill in your details</span>
+                      </v-card-title>
+                      <v-card-text>
+                        <v-container>
+                          <v-row>
+                            <v-col cols="12" sm="6" md="6">
+                              <v-text-field
+                                label="First Name*"
+                                required
+                                outlined
+                              ></v-text-field>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                              <v-text-field
+                                label="Last Name*"
+                                persistent-hint
+                                required
+                                outlined
+                              ></v-text-field>
+                            </v-col>
+                            <v-col cols="12">
+                              <v-text-field
+                                label="Email*"
+                                required
+                                placeholder="e.g myname@example.com"
+                              ></v-text-field>
+                            </v-col>
+                            <v-col cols="6" md="4">
+                              <v-text-field
+                                label="Phone Number*"
+                                type="integer"
+                                required
+                                outlined
+                              ></v-text-field>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="4">
+                              <v-select
+                                :items="['16-25', '26-35', '35-54', '54+']"
+                                label="Age*"
+                                required
+                                outlined
+                              ></v-select>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                              <v-autocomplete
+                                :items="[
+                                  'Developer',
+                                  'Software Engineer',
+                                  'Potential Investor',
+                                  'Scout',
+                                  'Project Manager',
+                                  'Other',
+                                ]"
+                                label="Who are you?"
+                                multiple
+                                outlined
+                              ></v-autocomplete>
+                            </v-col>
+                          </v-row>
+                        </v-container>
+                        <small>*indicates required field</small>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="dialog = false"
+                        >
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="dialog = false"
+                        >
+                          Register
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </v-col>
+              </v-row>
+          </v-footer>      
+      </v-img>
     </v-main>
   </v-app>
 </template>
@@ -371,23 +445,33 @@ import FlipCountdown from "vue2-flip-countdown";
 import Events from "./components/Events";
 
 export default {
-  components: { FlipCountdown },
-  Events,
+  components: { FlipCountdown, Events },
+
   data() {
     return {
       tab: null,
       items: ["PAST EVENTS", "FUTURE EVENTS"],
+      reveal: false,
+      reveal1: false,
+      dialog: false,
       text:
         " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
-  data: () => ({
-    reveal: false,
-  }),
 };
 </script>
 
 <style lang="scss" scoped>
+.event-host {
+  position: absolute;
+  bottom: 0px !important;
+  width: 100vw;
+  &:hover {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+  }
+}
 .glow {
   font-size: 30px;
   color: #ffffff;
